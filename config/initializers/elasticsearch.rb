@@ -12,7 +12,7 @@ if (Rails.env.test? || Rails.env.development?) && Toxiproxy.running?
   )
 end
 
-url = ENV['ELASTICSEARCH_URL'] || "http://localhost:#{port}"
+url = ENV['ELASTICSEARCH_URL'] || "http://search:#{port}"
 Elasticsearch::Model.client = Elasticsearch::Client.new(host: url)
 
 if Rails.env.development?
